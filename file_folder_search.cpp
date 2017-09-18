@@ -26,6 +26,8 @@ BOOL cFileFoldSearch::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 	hStop = GetDlgItem(hwnd, ID_BSTOP);
 	hSubdir = GetDlgItem(hwnd, IDC_CHSUBF);
 
+	addDiscToCmboBox();
+
 	return TRUE;
 }
 
@@ -60,15 +62,20 @@ BOOL CALLBACK cFileFoldSearch::DlgProc(HWND hwnd, UINT message, WPARAM wParam, L
 
 void cFileFoldSearch::addDiscToCmboBox()
 {
-	TCHAR drive_letter;
+	char drive_letter;
 	int mask = GetLogicalDrives();
-
+	int i = -1;
 	for (drive_letter = 'a'; mask; mask >>= 1, ++drive_letter)
 	{
 		if (mask & 1) {
-			SendMessage(hDisc, CB_ADDSTRING, 0, LPARAM(drive_letter));
+			
+			driveList.push_back(drive_letter);
+			i++;
+			SendMessage(hDisc, CB_ADDSTRING, 0, LPARAM(driveList[i]));
 		}
 	}
+
+	//SendMessage(hDisc, CB_SETCURSEL, (WPARAM)1, (LPARAM)0);
 }
 
 void cFileFoldSearch::getPathforSearch()
