@@ -1,16 +1,16 @@
 //{{NO_DEPENDENCIES}}
-// Включаемый файл, созданный в Microsoft Visual C++.
-// Используется 2_multithreading.rc
+// Microsoft Visual C++ generated include file.
+// Used by 2_multithreading.rc
 //
 #define IDD_DIALOG1                     101
 #define IDC_EFILE                       1001
 #define IDC_COMBDISC                    1002
 #define IDC_CHECK1                      1003
-#define IDC_CHSUBF                      1003
+#define IDC_CHSUBF                      1005
 #define IDC_EFRASE                      1004
 #define ID_BFIND                        1010
 #define ID_BSTOP                        1011
-#define IDC_LIST4                       1012
+#define IDC_FINDLIST                    1012
 
 // Next default values for new objects
 // 
